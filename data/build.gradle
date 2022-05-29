@@ -1,0 +1,62 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+}
+
+android {
+    namespace "com.r2b.apps.xuser.data"
+    compileSdk rootProject.compile_sdk_version
+
+    defaultConfig {
+        minSdk rootProject.min_sdk_version
+        targetSdk rootProject.target_sdk_version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+
+    implementation project(':domain')
+    implementation project(":lib:utils")
+    implementation project(':lib:logger')
+    implementation libs.androidx.paging.runtime
+    implementation libs.androidx.room.paging
+
+    compileOnly libs.androidx.room.runtime
+    compileOnly libs.androidx.room.ktx
+    kapt libs.androidx.room.compiler
+    compileOnly libs.hilt.android
+
+    testImplementation libs.junit
+    testImplementation libs.mockk
+    testImplementation libs.mockk.agent.jvm
+    testImplementation libs.kotlinx.coroutines.core
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.androidx.paging.testing
+    testImplementation libs.androidx.room.runtime
+    testImplementation libs.androidx.room.ktx
+
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
+    androidTestImplementation libs.androidx.test.core
+    androidTestImplementation libs.androidx.room.testing
+    androidTestImplementation libs.kotlinx.coroutines.core
+}

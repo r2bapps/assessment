@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(':lib:common-api')
+
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.moshi
+    implementation libs.okhttp.logging.interceptor
+    implementation libs.moshi
+    implementation libs.junit
+    implementation libs.okhttp.mockwebserver
+    implementation libs.kotlinx.coroutines.test
+}

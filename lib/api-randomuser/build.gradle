@@ -1,0 +1,24 @@
+plugins {
+    id 'java-library'
+    id 'org.jetbrains.kotlin.jvm'
+    id 'com.google.devtools.ksp'
+}
+
+java {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+}
+
+dependencies {
+    implementation project(':lib:common-api')
+    testImplementation project(':lib:common-test')
+
+    compileOnly libs.retrofit
+    compileOnly libs.moshi
+    ksp libs.moshi.kotlin.codegen
+
+    testImplementation libs.retrofit
+    testImplementation libs.okhttp.mockwebserver
+    testImplementation libs.junit
+    testImplementation libs.kotlinx.coroutines.core
+}

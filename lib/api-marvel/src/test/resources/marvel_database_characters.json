@@ -1,0 +1,19 @@
+{
+  "batchcomplete": true,
+  "query": {
+    "pages": [
+      {
+        "pageid": 8190,
+        "ns": 0,
+        "title": "Spider-Man",
+        "index": 1,
+        "fullurl": "https://marvel.fandom.com/wiki/Spider-Man",
+        "thumbnail": {
+          "source": "https://static.wikia.nocookie.net/marveldatabase/images/spider-man.jpg",
+          "width": 197,
+          "height": 300
+        }
+      }
+    ]
+  }
+}

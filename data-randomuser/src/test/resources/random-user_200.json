@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Ricky",
+        "last": "Olson"
+      },
+      "location": {
+        "street": {
+          "number": 1619,
+          "name": "Blossom Hill Rd"
+        },
+        "city": "Warragul",
+        "state": "Queensland",
+        "country": "Australia",
+        "postcode": 4939,
+        "coordinates": {
+          "latitude": "-83.7621",
+          "longitude": "-98.9461"
+        },
+        "timezone": {
+          "offset": "-4:00",
+          "description": "Atlantic Time (Canada), Caracas, La Paz"
+        }
+      },
+      "email": "ricky.olson@example.com",
+      "login": {
+        "uuid": "ca420f73-b7fb-404f-8112-c86c4b5e8fcf",
+        "username": "bigdog776",
+        "password": "august",
+        "salt": "RD9Tcq7U",
+        "md5": "394e1bbcc76a185a366772a5965432b0",
+        "sha1": "9103fce4aa9e797461ce02d44093088fd6b266a0",
+        "sha256": "deef9128a932bec6877f6573ecaf11e446a80170496f418185e8bee66bac4589"
+      },
+      "dob": {
+        "date": "1974-05-23T16:26:56.951Z",
+        "age": 48
+      },
+      "registered": {
+        "date": "2009-09-20T00:26:23.824Z",
+        "age": 13
+      },
+      "phone": "02-7385-9798",
+      "cell": "0427-692-108",
+      "id": {
+        "name": "TFN",
+        "value": "316713793"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/78.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/78.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/78.jpg"
+      },
+      "nat": "AU"
+    }
+  ],
+  "info": {
+    "seed": "2106ac26728c9f54",
+    "results": 1,
+    "page": 1,
+    "version": "1.3"
+  }
+}

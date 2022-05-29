@@ -1,0 +1,119 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.plugin.compose'
+    id 'org.jetbrains.kotlin.plugin.serialization'
+    id 'org.jetbrains.kotlin.kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace "com.r2b.apps.xuser"
+    compileSdk rootProject.compile_sdk_version
+
+    defaultConfig {
+        applicationId "com.r2b.apps.xuser"
+        minSdk rootProject.min_sdk_version
+        targetSdk rootProject.target_sdk_version
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "api"
+    productFlavors {
+        marvel {
+            dimension "api"
+            applicationIdSuffix ".marvel"
+            versionNameSuffix "-marvel"
+        }
+        randomuser {
+            dimension "api"
+            applicationIdSuffix ".randomuser"
+            versionNameSuffix "-randomuser"
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions { jvmTarget = '1.8' }
+    buildFeatures {
+        buildConfig true
+        compose true
+    }
+}
+
+dependencies {
+
+    implementation project(':domain')
+    implementation project(':data')
+    implementation project(':lib:common-api')
+    implementation project(':lib:logger')
+    implementation project(':lib:tracker')
+    implementation project(':lib:image-loader')
+    implementation project(":lib:utils")
+    testImplementation project(':lib:common-test')
+
+    marvelImplementation project(':data-marvel')
+    marvelImplementation project(':lib:api-marvel')
+    randomuserImplementation project(':data-randomuser')
+    randomuserImplementation project(':lib:api-randomuser')
+
+    // TODO: Extract grouped dependencies
+
+    // HILT
+    implementation libs.hilt.android
+    kapt libs.androidx.hilt.compiler
+    kapt libs.hilt.compiler
+    // NAVIGATION
+    implementation libs.androidx.navigation.compose
+    implementation libs.androidx.hilt.navigation.compose
+    implementation libs.serialization.json
+    // ROOM
+    implementation libs.androidx.room.runtime
+    implementation libs.androidx.room.ktx
+    kapt libs.androidx.room.compiler
+    implementation libs.androidx.paging.runtime
+    implementation libs.androidx.compose.paging
+    // RETROFIT + MOSHI + OKHTTP
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.moshi
+    implementation libs.okhttp.logging.interceptor
+    implementation libs.okhttp
+    implementation libs.moshi
+    // ANDROID
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.lifecycle.runtime.ktx
+    implementation libs.androidx.lifecycle.runtime.compose
+    implementation libs.androidx.activity.compose
+    implementation libs.google.material
+    implementation platform(libs.androidx.compose.bom)
+    implementation libs.androidx.compose.ui
+    implementation libs.androidx.compose.ui.tooling.preview
+    implementation libs.androidx.compose.material3
+    implementation libs.coil.compose
+    debugImplementation libs.androidx.compose.ui.tooling
+
+    testImplementation libs.androidx.arch.core.common
+    testImplementation libs.androidx.arch.core.runtime
+    testImplementation libs.androidx.arch.core.testing
+    testImplementation libs.kotlinx.coroutines.test
+    testImplementation libs.junit
+    testImplementation libs.mockk
+    testImplementation libs.mockk.agent.jvm
+    testImplementation libs.turbine
+
+    androidTestImplementation libs.androidx.test.ext.junit
+}
+
+kapt {
+    correctErrorTypes true
+}

@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+}
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
+
+rootProject.name = "x-user"
+include ':app'
+include ':lib:api-marvel'
+include ':lib:api-randomuser'
+include ':lib:common-api'
+include ':lib:common-test'
+include ':lib:utils'
+include ':domain'
+include ':lib:logger'
+include ':lib:tracker'
+include ':lib:image-loader'
+include ':data'
+include ':data-marvel'
+include ':data-randomuser'

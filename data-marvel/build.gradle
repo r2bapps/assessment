@@ -1,0 +1,51 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "com.r2b.apps.xuser.data.api.marvel"
+    compileSdk rootProject.compile_sdk_version
+
+    defaultConfig {
+        minSdk rootProject.min_sdk_version
+        targetSdk rootProject.target_sdk_version
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+
+    implementation project(':data')
+    implementation project(':lib:api-marvel')
+    implementation project(':lib:common-api')
+    implementation project(':lib:logger')
+    implementation project(':lib:utils')
+    testImplementation project(':lib:common-test')
+
+    testImplementation libs.junit
+    testImplementation libs.mockk
+    testImplementation libs.mockk.agent.jvm
+    testImplementation libs.turbine
+    testImplementation libs.kotlinx.coroutines.test
+
+    androidTestImplementation libs.androidx.test.ext.junit
+    androidTestImplementation libs.androidx.test.espresso.core
+}
