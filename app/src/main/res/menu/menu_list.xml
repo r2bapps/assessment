@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.r2b.apps.xuser.ui.MainActivity">
+    <!--
+        Note: iconTint does not work on default app bar.
+        Does not take into account the apply on menu-night-v26
+        Applied on code!
+    -->
+    <item
+        android:id="@+id/action_filter"
+        android:orderInCategory="100"
+        android:title="@string/action_filter"
+        android:icon="@drawable/ic_filter"
+        app:showAsAction="always" />
+</menu>

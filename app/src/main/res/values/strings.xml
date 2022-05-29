@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">x-user</string>
+    <string name="user_list_fragment_label">user list fragment</string>
+    <string name="user_detail_fragment_label">user detail fragment</string>
+    <string name="gender_label">Gender:</string>
+    <string name="name_label">Name:</string>
+    <string name="description_label">Description:</string>
+    <string name="surname_label">Surname:</string>
+    <string name="address_label">Address:</string>
+    <string name="registered_label">Registered:</string>
+    <string name="email_label">Email:</string>
+    <string name="confirm_delete">Confirm delete?</string>
+    <string name="confirm_undo">Undo?</string>
+    <string name="unknown_error">Unknown error: %1$s</string>
+    <string name="last_page">You have reached the last page</string>
+    <string name="action_filter">Filter</string>
+    <string name="yes">YES</string>
+    <string name="search_filter_hint">Search on name, surname or email</string>
+</resources>

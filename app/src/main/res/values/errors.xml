@@ -1,0 +1,9 @@
+<resources>
+    <string name="please_check_your_internet_connection">Please check your internet connection.</string>
+    <string name="SocketTimeoutException">Timeout - %1$s</string>
+    <string name="UnknownHostException">Unable to make a connection - %1$s</string>
+    <string name="ConnectionShutdownException">Connection shutdown - %1$s</string>
+    <string name="IOException">IO error</string>
+    <string name="IllegalStateException">Illegal state error</string>
+    <string name="HttpException">HTTP error</string>
+</resources>

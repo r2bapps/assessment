@@ -1,0 +1,53 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdk 32
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 32
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+
+dependencies {
+
+    implementation project(':data')
+    api project(':lib:api-randomuser')
+    implementation project(':lib:logger')
+
+    api "androidx.room:room-runtime:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version"
+    implementation "androidx.room:room-ktx:$rootProject.room_version"
+    implementation "com.google.dagger:hilt-android:$rootProject.hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$rootProject.hilt_version"
+
+    testImplementation "junit:junit:$rootProject.junit_version"
+    testImplementation "io.mockk:mockk:$rootProject.mockk_version"
+    testImplementation "io.mockk:mockk-agent-jvm:$rootProject.mockk_version"
+    testImplementation "app.cash.turbine:turbine:$rootProject.turbine_version"
+    androidTestImplementation "androidx.test.ext:junit:$rootProject.junit_ext_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.expresso_version"
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel target="1.8">
+      <module name="x-user.app" target="11" />
+      <module name="x-user.data" target="11" />
+      <module name="x-user.data-marvel" target="11" />
+      <module name="x-user.data-randomuser" target="11" />
+      <module name="x-user.lib.image-loader" target="11" />
+      <module name="x-user.lib.logger" target="11" />
+      <module name="x-user.lib.storage" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
