@@ -9,7 +9,6 @@
     <string name="address_label">Address:</string>
     <string name="registered_label">Registered:</string>
     <string name="email_label">Email:</string>
-    <string name="confirm_delete">Confirm delete?</string>
     <string name="confirm_undo">Undo?</string>
     <string name="unknown_error">Unknown error: %1$s</string>
     <string name="last_page">You have reached the last page</string>

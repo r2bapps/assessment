@@ -17,7 +17,8 @@
         app:layout_constraintStart_toStartOf="parent"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
-        tools:src="@drawable/ic_profile"/>
+        tools:src="@drawable/ic_profile"
+        tools:ignore="ContentDescription" />
 
     <TextView
         android:id="@+id/fullName"

@@ -20,7 +20,8 @@
             android:layout_gravity="center"
             android:adjustViewBounds="true"
             android:scaleType="centerCrop"
-            tools:src="@drawable/ic_camera" />
+            tools:src="@drawable/ic_camera"
+            tools:ignore="ContentDescription" />
 
         <TextView
             android:id="@+id/nameLabel"

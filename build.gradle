@@ -34,9 +34,9 @@ ext {
     coil_version = "2.1.0"
     coroutines_version = "1.6.1"
     constraintlayout_version = "2.1.4"
-    material_version = "1.6.0"
-    appcompat_version = "1.4.1"
-    core_ktx_version = "1.7.0"
+    material_version = "1.6.1"
+    appcompat_version = "1.4.2"
+    core_ktx_version = "1.8.0"
 
     // UNIT TESTING
     junit_version = "4.13.2"

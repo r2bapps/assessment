@@ -1,5 +1,6 @@
 package com.r2b.apps.xuser.ui.list.adapter.delegate
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -43,10 +44,11 @@ class UserItemViewHolder(
     private val imageLoader: ImageLoader,
 ) : RecyclerView.ViewHolder(binding.root) {
 
+    @SuppressLint("SetTextI18n")
     fun bind(item: UserListItem) {
         with(binding) {
             if (item.user.picture.isNotEmpty()) imageLoader.load(item.user.picture, image, R.drawable.ic_profile)
-            fullName.text = "${item.user.name.orEmpty()} ${item.user.surname.orEmpty()}"
+            fullName.text = "${item.user.name.orEmpty()} ${item.user.surname.orEmpty()}".trim()
             email.text = item.user.email.orEmpty()
             phone.text = item.user.phone.orEmpty()
             setListener(onSelectedUser, item.user)
