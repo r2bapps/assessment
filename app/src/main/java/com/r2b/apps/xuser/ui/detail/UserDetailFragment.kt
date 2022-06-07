@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.xuser.ui.detail
 
 import android.os.Bundle
 import android.view.View
@@ -22,9 +22,12 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class UserDetailFragment : Fragment(R.layout.fragment_user_detail) {
 
-    @Inject lateinit var tracker: Tracker
-    @Inject lateinit var logger: Logger
-    @Inject lateinit var imageLoader: ImageLoader
+    @Inject
+    lateinit var tracker: Tracker
+    @Inject
+    lateinit var logger: Logger
+    @Inject
+    lateinit var imageLoader: ImageLoader
 
     private val binding by viewBinding<FragmentUserDetailBinding>()
     private val viewModel: UserDetailViewModel by viewModels()

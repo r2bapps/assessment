@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.ui.adapter.model
+package com.r2b.apps.xuser.ui.list.adapter.model
 
 import com.r2b.apps.xuser.domain.model.User
 

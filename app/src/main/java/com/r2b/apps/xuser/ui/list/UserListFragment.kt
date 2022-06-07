@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.xuser.ui.list
 
 import android.os.Bundle
 import android.view.Menu
@@ -15,10 +15,10 @@ import com.r2b.apps.lib.tracker.Tracker
 import com.r2b.apps.xuser.R
 import com.r2b.apps.xuser.databinding.FragmentUserListBinding
 import com.r2b.apps.xuser.domain.model.User
-import com.r2b.apps.xuser.ui.adapter.UserAdapter
-import com.r2b.apps.xuser.ui.adapter.model.LoadingMoreListItem
-import com.r2b.apps.xuser.ui.adapter.model.UserListItem
-import com.r2b.apps.xuser.ui.adapter.model.UserListItemView
+import com.r2b.apps.xuser.ui.list.adapter.UserAdapter
+import com.r2b.apps.xuser.ui.list.adapter.model.LoadingMoreListItem
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItem
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItemView
 import com.r2b.apps.xuser.ui.common.extensions.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.launchIn

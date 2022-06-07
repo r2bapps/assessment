@@ -1,11 +1,10 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.xuser.ui.list
 
-import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.r2b.apps.xuser.domain.*
 import com.r2b.apps.xuser.domain.model.User
-import com.r2b.apps.xuser.ui.adapter.model.UserListItem
+import com.r2b.apps.xuser.domain.usecase.*
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.*

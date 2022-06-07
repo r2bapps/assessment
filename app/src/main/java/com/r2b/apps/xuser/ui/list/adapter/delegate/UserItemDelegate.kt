@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.ui.adapter.delegate
+package com.r2b.apps.xuser.ui.list.adapter.delegate
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,8 +8,8 @@ import com.r2b.apps.lib.imageloader.ImageLoader
 import com.r2b.apps.xuser.R
 import com.r2b.apps.xuser.databinding.LayoutUserListItemBinding
 import com.r2b.apps.xuser.domain.model.User
-import com.r2b.apps.xuser.ui.adapter.model.UserListItem
-import com.r2b.apps.xuser.ui.adapter.model.UserListItemView
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItem
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItemView
 
 class UserItemDelegate(
     private val onSelectedUser: (user: User) -> Unit,

@@ -6,7 +6,7 @@
     android:padding="@dimen/general_padding"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.UserListFragment">
+    tools:context=".ui.list.UserListFragment">
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/search_bar"

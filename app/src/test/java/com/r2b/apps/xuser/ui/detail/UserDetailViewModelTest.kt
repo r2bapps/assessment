@@ -1,6 +1,7 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.xuser.ui.detail
 
-import com.r2b.apps.xuser.domain.GetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.GetCurrentUserUseCase
+import com.r2b.apps.xuser.ui.FAKE_USER_LIST
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
@@ -12,11 +13,7 @@ import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
 import kotlinx.coroutines.test.resetMain
 import kotlinx.coroutines.test.setMain
-import org.junit.After
-import org.junit.Assert.assertEquals
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 
 class UserDetailViewModelTest {
 
@@ -27,7 +24,8 @@ class UserDetailViewModelTest {
 
     private lateinit var viewModel: UserDetailViewModel
 
-    @MockK private lateinit var getCurrentUserUseCase: GetCurrentUserUseCase
+    @MockK
+    private lateinit var getCurrentUserUseCase: GetCurrentUserUseCase
 
     @Before
     fun setUp() {
@@ -51,9 +49,9 @@ class UserDetailViewModelTest {
 
         viewModel.load()
 
-        assertEquals(UserDetailViewModel.UserUiState.Idle, viewModel.uiState.first())
-        assertEquals(expectedSuccess, viewModel.uiState.drop(1).first())
-        assertEquals(UserDetailViewModel.UserUiState.Idle, viewModel.uiState.drop(2).first())
+        Assert.assertEquals(UserDetailViewModel.UserUiState.Idle, viewModel.uiState.first())
+        Assert.assertEquals(expectedSuccess, viewModel.uiState.drop(1).first())
+        Assert.assertEquals(UserDetailViewModel.UserUiState.Idle, viewModel.uiState.drop(2).first())
     }
 
 }

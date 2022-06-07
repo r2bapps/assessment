@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/UserListFragment"
-        android:name="com.r2b.apps.xuser.ui.UserListFragment"
+        android:name="com.r2b.apps.xuser.ui.list.UserListFragment"
         android:label="@string/user_list_fragment_label"
         tools:layout="@layout/fragment_user_list">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/UserDetailFragment"
-        android:name="com.r2b.apps.xuser.ui.UserDetailFragment"
+        android:name="com.r2b.apps.xuser.ui.detail.UserDetailFragment"
         android:label="@string/user_detail_fragment_label"
         tools:layout="@layout/fragment_user_detail">
     </fragment>

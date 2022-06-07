@@ -1,6 +1,4 @@
-package com.r2b.apps.xuser.ui
-
-import org.junit.Assert.*
+package com.r2b.apps.xuser.ui.list
 
 import org.junit.After
 import org.junit.Before

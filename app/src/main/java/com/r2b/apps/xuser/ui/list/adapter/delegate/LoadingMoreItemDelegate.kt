@@ -1,12 +1,12 @@
-package com.r2b.apps.xuser.ui.adapter.delegate
+package com.r2b.apps.xuser.ui.list.adapter.delegate
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.hannesdorfmann.adapterdelegates4.AdapterDelegate
 import com.r2b.apps.xuser.databinding.LayoutLoadingMoreListItemBinding
-import com.r2b.apps.xuser.ui.adapter.model.LoadingMoreListItem
-import com.r2b.apps.xuser.ui.adapter.model.UserListItemView
+import com.r2b.apps.xuser.ui.list.adapter.model.LoadingMoreListItem
+import com.r2b.apps.xuser.ui.list.adapter.model.UserListItemView
 
 class LoadingMoreItemDelegate : AdapterDelegate<List<UserListItemView>>() {
 

@@ -1,9 +1,8 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.xuser.ui.detail
 
-import androidx.annotation.VisibleForTesting
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.r2b.apps.xuser.domain.GetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.GetCurrentUserUseCase
 import com.r2b.apps.xuser.domain.model.User
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
