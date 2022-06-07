@@ -26,9 +26,12 @@ class UserRepositoryImplTest {
     @Before
     fun setUp() {
         MockKAnnotations.init(this, relaxUnitFun = true)
-        repository = UserRepositoryImpl(dataSource, localDataSource)
-        repository.logger = logger
-        repository.userFilterDelegate = filterDelegate
+        repository = UserRepositoryImpl(
+            dataSource,
+            localDataSource,
+            filterDelegate,
+            logger,
+        )
     }
 
     @After

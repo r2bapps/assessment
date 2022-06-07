@@ -12,10 +12,9 @@ import javax.inject.Inject
 class UserRepositoryImpl @Inject constructor(
     private val userDataSource: UserDataSource,
     private val userLocalDataSource: UserLocalDataSourceImpl,
+    private val userFilterDelegate: UserFilterDelegate,
+    private val logger: Logger,
 ) : UserRepository {
-
-    @Inject lateinit var logger: Logger
-    @Inject lateinit var userFilterDelegate: UserFilterDelegate
 
     private var currentUserId: Int? = null
     private var currentList: MutableList<User> = mutableListOf()

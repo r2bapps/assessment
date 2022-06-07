@@ -6,9 +6,8 @@ import javax.inject.Inject
 
 class UserLocalDataSourceImpl @Inject constructor(
     private val userDAO: UserDAO,
+    private val logger: Logger,
 ) {
-
-    @Inject lateinit var logger: Logger
 
     // TODO: Move Pagination to a shared place and use on pageItems
     private val pageItems = 20
