@@ -31,8 +31,8 @@ android {
             dimension "api"
             applicationIdSuffix ".marvel"
             versionNameSuffix "-marvel"
-            // Added on project gradle.properties to support api calls with no changes, but should be on user gradle.properties.
             buildConfigField "String" , "MARVEL_PRIVATE_KEY" , "\"${project.properties.get('MARVEL_PRIVATE_KEY')}\""
+            buildConfigField "String" , "MARVEL_PUBLIC_KEY" , "\"${project.properties.get('MARVEL_PUBLIC_KEY')}\""
         }
         randomuser {
             dimension "api"

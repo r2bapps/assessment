@@ -24,12 +24,7 @@ import javax.inject.Singleton
 @InstallIn(SingletonComponent::class)
 class ApiModule {
 
-    // user: rifegir995@doerma.com
-    // pass: rifegir995
-
-    // TODO: Extract to config file
-
-    private val publicKey: String = "ce0785c979db62c475ea099619dc4eba"
+    private val publicKey: String = BuildConfig.MARVEL_PUBLIC_KEY
     private val privateKey: String = BuildConfig.MARVEL_PRIVATE_KEY
 
     @MarvelAuth
