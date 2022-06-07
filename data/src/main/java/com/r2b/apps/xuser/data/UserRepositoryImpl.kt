@@ -5,7 +5,7 @@ import com.r2b.apps.xuser.data.api.UserDataSource
 import com.r2b.apps.xuser.data.filter.UserFilterDelegate
 import com.r2b.apps.xuser.data.storage.UserLocalDataSourceImpl
 import com.r2b.apps.xuser.data.storage.entity.UserDB
-import com.r2b.apps.xuser.domain.UserRepository
+import com.r2b.apps.xuser.domain.repository.UserRepository
 import com.r2b.apps.xuser.domain.model.User
 import javax.inject.Inject
 

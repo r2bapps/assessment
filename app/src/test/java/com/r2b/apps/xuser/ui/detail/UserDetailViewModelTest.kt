@@ -1,6 +1,6 @@
 package com.r2b.apps.xuser.ui.detail
 
-import com.r2b.apps.xuser.domain.usecase.GetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.currentuser.GetCurrentUserUseCase
 import com.r2b.apps.xuser.ui.FAKE_USER_LIST
 import io.mockk.every
 import io.mockk.impl.annotations.MockK

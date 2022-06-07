@@ -1,7 +1,12 @@
 package com.r2b.apps.xuser.di
 
 import com.r2b.apps.xuser.di.qualifier.BackgroundScope
-import com.r2b.apps.xuser.domain.*
+import com.r2b.apps.xuser.domain.repository.UserRepository
+import com.r2b.apps.xuser.domain.usecase.*
+import com.r2b.apps.xuser.domain.usecase.currentuser.GetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.currentuser.SetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.filter.FilterUsersUseCase
+import com.r2b.apps.xuser.domain.usecase.filter.RemoveUsersFilterUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

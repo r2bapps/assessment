@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.domain
+package com.r2b.apps.xuser.domain.repository
 
 import com.r2b.apps.xuser.domain.model.User
 

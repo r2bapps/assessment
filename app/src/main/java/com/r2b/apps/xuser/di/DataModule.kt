@@ -1,7 +1,7 @@
 package com.r2b.apps.xuser.di
 
 import com.r2b.apps.xuser.data.UserRepositoryImpl
-import com.r2b.apps.xuser.domain.UserRepository
+import com.r2b.apps.xuser.domain.repository.UserRepository
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

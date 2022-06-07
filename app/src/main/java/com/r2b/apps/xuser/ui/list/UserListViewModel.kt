@@ -4,6 +4,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.r2b.apps.xuser.domain.model.User
 import com.r2b.apps.xuser.domain.usecase.*
+import com.r2b.apps.xuser.domain.usecase.currentuser.SetCurrentUserUseCase
+import com.r2b.apps.xuser.domain.usecase.filter.FilterUsersUseCase
+import com.r2b.apps.xuser.domain.usecase.filter.RemoveUsersFilterUseCase
 import com.r2b.apps.xuser.ui.list.adapter.model.UserListItem
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

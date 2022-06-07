@@ -1,23 +1,20 @@
-package com.r2b.apps.xuser.domain
+package com.r2b.apps.xuser.domain.usecase.currentuser
 
 import app.cash.turbine.test
-import io.mockk.MockKAnnotations
+import com.r2b.apps.xuser.domain.FAKE_USER_LIST
+import com.r2b.apps.xuser.domain.repository.UserRepository
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.verify
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
-import org.junit.Assert.*
-
-import org.junit.After
-import org.junit.Before
-import org.junit.Rule
-import org.junit.Test
+import org.junit.*
 
 class GetCurrentUserUseCaseTest {
 
-    @get:Rule val mockkRule = MockKRule(this)
+    @get:Rule
+    val mockkRule = MockKRule(this)
 
     private lateinit var useCase: GetCurrentUserUseCase
 
@@ -40,7 +37,7 @@ class GetCurrentUserUseCaseTest {
             val expected = FAKE_USER_LIST[0]
 
             useCase.execute().test {
-                assertEquals(expected, awaitItem())
+                Assert.assertEquals(expected, awaitItem())
                 verify { runBlocking { repository.getCurrentUser() } }
                 cancelAndConsumeRemainingEvents()
             }

@@ -1,7 +1,7 @@
-package com.r2b.apps.xuser.domain
+package com.r2b.apps.xuser.domain.usecase.currentuser
 
 import app.cash.turbine.test
-import io.mockk.MockKAnnotations
+import com.r2b.apps.xuser.domain.repository.UserRepository
 import io.mockk.impl.annotations.MockK
 import io.mockk.junit4.MockKRule
 import io.mockk.verify
@@ -12,18 +12,20 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class RemoveUserUseCaseTest {
+class SetCurrentUserUseCaseTest {
 
-    @get:Rule val mockkRule = MockKRule(this)
+    @get:Rule
+    val mockkRule = MockKRule(this)
 
-    private lateinit var useCase: RemoveUserUseCase
+    private val id = 0
+    private lateinit var useCase: SetCurrentUserUseCase
 
     @MockK
     lateinit var repository: UserRepository
 
     @Before
     fun setUp() {
-        useCase = RemoveUserUseCase(repository, Dispatchers.Unconfined)
+        useCase = SetCurrentUserUseCase(repository, Dispatchers.Unconfined)
     }
 
     @After
@@ -31,14 +33,12 @@ class RemoveUserUseCaseTest {
     }
 
     @Test
-    fun execute() {
-        val id = 0
+    fun execute() =
         runBlocking {
             useCase.execute(id).test {
-                verify { runBlocking { repository.removeUser(any()) } }
+                verify { runBlocking { repository.setCurrentUser(id) } }
                 cancelAndConsumeRemainingEvents()
             }
         }
-    }
 
 }
