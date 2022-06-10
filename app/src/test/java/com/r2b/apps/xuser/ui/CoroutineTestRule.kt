@@ -1,21 +1,24 @@
 package com.r2b.apps.xuser.ui
 
-import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.*
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description
 
-class UnconfinedDispatcherTestRule: TestWatcher() {
+@OptIn(ExperimentalCoroutinesApi::class)
+class CoroutineTestRule: TestWatcher() {
 
-    //private val unconfinedDispatcher: CoroutineDispatcher
+    private val dispatcher = StandardTestDispatcher()
 
     override fun starting(description: Description) {
-        //Dispatchers.setMain(unconfinedDispatcher)
         super.starting(description)
+        Dispatchers.setMain(dispatcher)
     }
 
     override fun finished(description: Description) {
-        //Dispatchers.resetMain()
         super.finished(description)
+        Dispatchers.resetMain()
     }
+
 }

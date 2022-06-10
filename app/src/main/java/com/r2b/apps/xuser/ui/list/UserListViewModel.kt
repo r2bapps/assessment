@@ -1,5 +1,7 @@
 package com.r2b.apps.xuser.ui.list
 
+import androidx.annotation.VisibleForTesting
+import androidx.annotation.VisibleForTesting.PRIVATE
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.r2b.apps.xuser.domain.model.User
@@ -29,8 +31,10 @@ class UserListViewModel @Inject constructor(
     val event = _event.receiveAsFlow()
 
     private var page: Int = 0
-    private var isLastPage: Boolean = false
-    private var isLoadingMoreEnabled: Boolean = false
+    @VisibleForTesting(otherwise = PRIVATE)
+    internal var isLastPage: Boolean = false
+    @VisibleForTesting(otherwise = PRIVATE)
+    internal var isLoadingMoreEnabled: Boolean = false
 
     fun load() {
         if (!isLastPage) {
@@ -122,7 +126,6 @@ class UserListViewModel @Inject constructor(
         data class LoadMore(val users: List<UserListItem>): UserUiState()
         data class Filter(val users: List<UserListItem>): UserUiState()
         data class FilterRemoved(val users: List<UserListItem>): UserUiState()
-
     }
 
     sealed class Event {
