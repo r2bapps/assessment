@@ -36,16 +36,15 @@ class UserDataSourceImplTest {
     }
 
     @Test
-    fun list() =
-        runBlocking {
-            val page = 0
-            val parsedBody: RandomUserResponse = parseJson(loadResourcesRule.resource) ?: RandomUserResponse()
-            every { runBlocking { service.users(any()) } } returns parsedBody
-            val expected = FAKE_USER_DTO_LIST
+    fun list() = runBlocking {
+        val page = 0
+        val parsedBody: RandomUserResponse = parseJson(loadResourcesRule.resource) ?: RandomUserResponse()
+        every { runBlocking { service.users(any()) } } returns parsedBody
+        val expected = FAKE_USER_DTO_LIST
 
-            val response = dataSource.list(page)
+        val response = dataSource.list(page)
 
-            assertEquals(expected, response)
-        }
+        assertEquals(expected, response)
+    }
 
 }
