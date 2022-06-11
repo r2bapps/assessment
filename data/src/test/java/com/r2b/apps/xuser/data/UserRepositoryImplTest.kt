@@ -3,7 +3,7 @@ package com.r2b.apps.xuser.data
 import com.r2b.apps.lib.logger.Logger
 import com.r2b.apps.xuser.data.api.UserDataSource
 import com.r2b.apps.xuser.data.filter.UserFilterDelegate
-import com.r2b.apps.xuser.data.storage.UserLocalDataSourceImpl
+import com.r2b.apps.xuser.data.storage.UserLocalDataSource
 import io.mockk.MockKAnnotations
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
@@ -21,7 +21,7 @@ class UserRepositoryImplTest {
     @MockK lateinit var logger: Logger
     @MockK lateinit var filterDelegate: UserFilterDelegate
     @MockK lateinit var dataSource: UserDataSource
-    @MockK lateinit var localDataSource: UserLocalDataSourceImpl
+    @MockK lateinit var localDataSource: UserLocalDataSource
 
     @Before
     fun setUp() {

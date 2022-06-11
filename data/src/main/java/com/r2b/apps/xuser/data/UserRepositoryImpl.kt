@@ -3,15 +3,15 @@ package com.r2b.apps.xuser.data
 import com.r2b.apps.lib.logger.Logger
 import com.r2b.apps.xuser.data.api.UserDataSource
 import com.r2b.apps.xuser.data.filter.UserFilterDelegate
-import com.r2b.apps.xuser.data.storage.UserLocalDataSourceImpl
+import com.r2b.apps.xuser.data.storage.UserLocalDataSource
 import com.r2b.apps.xuser.data.storage.entity.UserDB
-import com.r2b.apps.xuser.domain.repository.UserRepository
 import com.r2b.apps.xuser.domain.model.User
+import com.r2b.apps.xuser.domain.repository.UserRepository
 import javax.inject.Inject
 
 class UserRepositoryImpl @Inject constructor(
     private val userDataSource: UserDataSource,
-    private val userLocalDataSource: UserLocalDataSourceImpl,
+    private val userLocalDataSource: UserLocalDataSource,
     private val userFilterDelegate: UserFilterDelegate,
     private val logger: Logger,
 ) : UserRepository {
