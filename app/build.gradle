@@ -4,6 +4,7 @@ plugins {
     id 'kotlin-kapt'
     id 'dagger.hilt.android.plugin'
     id 'androidx.navigation.safeargs.kotlin'
+    id 'com.google.android.libraries.mapsplatform.secrets-gradle-plugin'
 }
 
 android {
@@ -31,8 +32,6 @@ android {
             dimension "api"
             applicationIdSuffix ".marvel"
             versionNameSuffix "-marvel"
-            buildConfigField "String" , "MARVEL_PRIVATE_KEY" , "\"${project.properties.get('MARVEL_PRIVATE_KEY')}\""
-            buildConfigField "String" , "MARVEL_PUBLIC_KEY" , "\"${project.properties.get('MARVEL_PUBLIC_KEY')}\""
         }
         randomuser {
             dimension "api"
