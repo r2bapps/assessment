@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?, persistentState: PersistableBundle?) {
         super.onCreate(savedInstanceState, persistentState)
+        // TODO: Replace with Toolbar and create a ToolbarManager delegate
         actionBar?.setDisplayShowHomeEnabled(true)
         actionBar?.setLogo(R.drawable.ic_logo)
         actionBar?.setDisplayUseLogoEnabled(true)

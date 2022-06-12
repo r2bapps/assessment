@@ -50,6 +50,7 @@ class UserListFragment : Fragment(R.layout.fragment_user_list) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // TODO: Replace with a ToolbarManager delegate
         setHasOptionsMenu(true)
     }
 
