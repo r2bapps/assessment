@@ -10,9 +10,15 @@
     <string name="registered_label">Registered:</string>
     <string name="email_label">Email:</string>
     <string name="confirm_undo">Undo?</string>
-    <string name="unknown_error">Unknown error: %1$s</string>
     <string name="last_page">You have reached the last page</string>
     <string name="action_filter">Filter</string>
     <string name="yes">YES</string>
     <string name="search_filter_hint">Search on name, surname or email</string>
+    <string name="unknown_error">Unknown error</string>
+    <string name="internet_connection_error">Internet connection error</string>
+    <string name="socket_timeout_error">Server connection error</string>
+    <string name="error_code_message_template">[Code: %1$s] %2$s</string>
+    <string name="error_message_template">%1$s</string>
+    <string name="error_message_cause_template">%1$s\n%2$s</string>
+    <string name="unknown_error_template">Unknown error\n%1$s</string>
 </resources>

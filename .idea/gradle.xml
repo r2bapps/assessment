@@ -18,9 +18,11 @@
             <option value="$PROJECT_DIR$/lib" />
             <option value="$PROJECT_DIR$/lib/api-marvel" />
             <option value="$PROJECT_DIR$/lib/api-randomuser" />
+            <option value="$PROJECT_DIR$/lib/common-api" />
             <option value="$PROJECT_DIR$/lib/image-loader" />
             <option value="$PROJECT_DIR$/lib/logger" />
             <option value="$PROJECT_DIR$/lib/tracker" />
+            <option value="$PROJECT_DIR$/lib/utils" />
           </set>
         </option>
       </GradleProjectSettings>

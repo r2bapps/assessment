@@ -37,6 +37,7 @@ dependencies {
     implementation project(':data')
     api project(':lib:api-marvel')
     implementation project(':lib:logger')
+    implementation project(':lib:utils')
 
     api "androidx.room:room-runtime:$rootProject.room_version"
     kapt "androidx.room:room-compiler:$rootProject.room_version"

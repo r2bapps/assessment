@@ -10,6 +10,8 @@ java {
 }
 
 dependencies {
+    api project(':lib:common-api')
+
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofit_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_version"

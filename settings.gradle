@@ -18,6 +18,8 @@ rootProject.name = "x-user"
 include ':app'
 include ':lib:api-marvel'
 include ':lib:api-randomuser'
+include ':lib:common-api'
+include ':lib:utils'
 include ':domain'
 include ':lib:logger'
 include ':lib:tracker'
