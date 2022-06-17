@@ -4,6 +4,9 @@ import com.r2b.apps.lib.api.randomuser.entity.RandomUserResponse
 import com.r2b.apps.lib.api.randomuser.retrofit.RandomUserService
 import com.r2b.apps.lib.api.successNetworkResponse
 import com.r2b.apps.lib.logger.Logger
+import com.r2b.apps.test.LoadResourcesTestRule
+import com.r2b.apps.test.parseJson
+import com.r2b.apps.utils.getOrDefaultOrNull
 import io.mockk.every
 import io.mockk.impl.annotations.MockK
 import io.mockk.impl.annotations.RelaxedMockK
@@ -44,7 +47,7 @@ class UserDataSourceImplTest {
         every { runBlocking { service.users(any()) } } returns successNetworkResponse(parsedBody)
         val expected = FAKE_USER_DTO_LIST
 
-        val response = dataSource.list(page)
+        val response = dataSource.list(page).getOrDefaultOrNull()
 
         assertEquals(expected, response)
     }

@@ -1,13 +1,13 @@
 package com.r2b.apps.xuser.ui.list
 
 import app.cash.turbine.test
+import com.r2b.apps.test.CoroutineTestRule
 import com.r2b.apps.utils.successEither
 import com.r2b.apps.xuser.domain.usecase.GetUsersUseCase
 import com.r2b.apps.xuser.domain.usecase.RemoveUserUseCase
 import com.r2b.apps.xuser.domain.usecase.currentuser.SetCurrentUserUseCase
 import com.r2b.apps.xuser.domain.usecase.filter.FilterUsersUseCase
 import com.r2b.apps.xuser.domain.usecase.filter.RemoveUsersFilterUseCase
-import com.r2b.apps.xuser.ui.CoroutineTestRule
 import com.r2b.apps.xuser.ui.FAKE_USER_LIST
 import com.r2b.apps.xuser.ui.FAKE_USER_LIST_ITEM
 import com.r2b.apps.xuser.ui.FakesBuilder
@@ -255,6 +255,7 @@ class UserDetailViewModelTest {
 
         // Then:
         viewModel.uiState.test {
+            assertEquals(Idle, awaitItem())
             assertEquals(expected, awaitItem())
             cancelAndIgnoreRemainingEvents()
         }

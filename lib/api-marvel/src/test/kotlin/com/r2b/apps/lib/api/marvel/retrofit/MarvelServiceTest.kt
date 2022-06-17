@@ -1,10 +1,12 @@
 package com.r2b.apps.lib.api.marvel.retrofit
 
+import com.r2b.apps.lib.api.NetworkResponse
+import com.r2b.apps.test.MockWebServerTestWatcher
+import com.r2b.apps.test.loadJson
 import com.r2b.apps.lib.api.getOrDefaultOrNull
-import com.r2b.apps.lib.api.marvel.MockWebServerTestWatcher
+import com.r2b.apps.lib.api.marvel.entity.MarvelErrorResponse
 import com.r2b.apps.lib.api.marvel.entity.Result
-import com.r2b.apps.lib.api.marvel.loadJson
-import com.r2b.apps.lib.api.marvel.retrofitBuilder
+import com.r2b.apps.test.retrofitBuilder
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -75,15 +77,36 @@ class MarvelServiceTest {
     }
 
     @Test
-    fun `When server error HttpException is thrown`() {
+    fun `When server error ApiError is retrieved`() = runBlocking {
+        val expectedCode = 409
+        val expectedError = MarvelErrorResponse(code = 409, status = "You may not request more than 100 items.")
         val body: String = loadJson(this::class.java.classLoader,"marvel_409.json")
         getMockWebServer().enqueue(
             MockResponse()
                 .setResponseCode(HttpURLConnection.HTTP_CONFLICT)
                 .setBody(body)
         )
+        val response = apiService.characters()
 
-        assertThrows(HttpException::class.java) { runBlocking { apiService.characters() } }
+        assert(response.isApiError())
+        assertEquals(expectedError, (response as NetworkResponse.ApiError).body)
+        assertEquals(expectedCode, (response as NetworkResponse.ApiError).code)
+
+    }
+
+    @Test
+    fun `When server error UnknownError is retrieved`() = runBlocking {
+        val expectedMessage = "Response is fail but the error body is null"
+        val body: String = loadJson(this::class.java.classLoader,"marvel_401.json")
+        getMockWebServer().enqueue(
+            MockResponse()
+                .setResponseCode(HttpURLConnection.HTTP_UNAUTHORIZED)
+                .setBody(body)
+        )
+        val response = apiService.characters()
+
+        assert(response.isUnknownError())
+        assertEquals(expectedMessage, (response as NetworkResponse.UnknownError).error.message)
     }
 
     private fun getMockWebServer() = mockWebServerRule.mockWebServer

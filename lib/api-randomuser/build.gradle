@@ -11,6 +11,7 @@ java {
 
 dependencies {
     api project(':lib:common-api')
+    testImplementation project(':lib:common-test')
 
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofit_version"

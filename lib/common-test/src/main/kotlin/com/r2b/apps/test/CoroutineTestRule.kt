@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.ui
+package com.r2b.apps.test
 
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.ExperimentalCoroutinesApi

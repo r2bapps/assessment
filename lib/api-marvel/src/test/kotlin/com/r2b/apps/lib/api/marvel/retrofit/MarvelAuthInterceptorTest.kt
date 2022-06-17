@@ -1,9 +1,9 @@
 package com.r2b.apps.lib.api.marvel.retrofit
 
-import com.r2b.apps.lib.api.marvel.MockWebServerTestWatcher
-import com.r2b.apps.lib.api.marvel.loadJson
+import com.r2b.apps.test.MockWebServerTestWatcher
+import com.r2b.apps.test.loadJson
 import com.r2b.apps.lib.api.marvel.md5
-import com.r2b.apps.lib.api.marvel.retrofitBuilder
+import com.r2b.apps.test.retrofitBuilder
 import kotlinx.coroutines.runBlocking
 import okhttp3.OkHttpClient
 import okhttp3.mockwebserver.MockResponse

@@ -1,6 +1,5 @@
 package com.r2b.apps.xuser.di
 
-import com.r2b.apps.lib.api.NetworkResponseAdapterFactory
 import com.r2b.apps.lib.api.marvel.retrofit.MarvelAuthInterceptor
 import com.r2b.apps.lib.api.marvel.retrofit.MarvelService
 import com.r2b.apps.lib.logger.Logger

@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.data.api.marvel
+package com.r2b.apps.test
 
 import org.junit.rules.TestWatcher
 import org.junit.runner.Description

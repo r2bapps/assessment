@@ -1,8 +1,8 @@
 package com.r2b.apps.xuser.ui.detail
 
 import app.cash.turbine.test
+import com.r2b.apps.test.CoroutineTestRule
 import com.r2b.apps.xuser.domain.usecase.currentuser.GetCurrentUserUseCase
-import com.r2b.apps.xuser.ui.CoroutineTestRule
 import com.r2b.apps.xuser.ui.FAKE_USER_LIST
 import com.r2b.apps.xuser.ui.detail.UserDetailViewModel.Event.Error
 import com.r2b.apps.xuser.ui.detail.UserDetailViewModel.UserUiState.Idle

@@ -1,4 +1,4 @@
-package com.r2b.apps.lib.api.randomuser
+package com.r2b.apps.test
 
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.rules.TestWatcher

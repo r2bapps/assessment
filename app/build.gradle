@@ -60,6 +60,7 @@ dependencies {
     implementation project(':lib:logger')
     implementation project(':lib:tracker')
     implementation project(':lib:image-loader')
+    testImplementation project(':lib:common-test')
 
     // TODO: Extract grouped dependencies
 

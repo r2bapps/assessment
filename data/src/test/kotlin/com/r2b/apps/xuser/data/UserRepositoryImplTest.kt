@@ -1,6 +1,7 @@
 package com.r2b.apps.xuser.data
 
 import com.r2b.apps.lib.logger.Logger
+import com.r2b.apps.utils.getOrDefaultOrNull
 import com.r2b.apps.utils.successEither
 import com.r2b.apps.xuser.data.api.UserDataSource
 import com.r2b.apps.xuser.data.filter.UserFilterDelegate
@@ -46,7 +47,7 @@ class UserRepositoryImplTest {
 
         val page = 0
         val expected = FAKE_USER_LIST
-        val response = repository.list(page)
+        val response = repository.list(page).getOrDefaultOrNull()
 
         assertEquals(expected, response)
         verify { runBlocking { localDataSource.create(any()) } }
@@ -60,7 +61,7 @@ class UserRepositoryImplTest {
         val expected = FAKE_USER_LIST
         every { runBlocking { localDataSource.list(any()) } } returns FAKE_USER_DB_LIST
 
-        val response = repository.list(page)
+        val response = repository.list(page).getOrDefaultOrNull()
 
         assertEquals(expected, response)
         verify(exactly = 0) { runBlocking { localDataSource.create(any()) } }

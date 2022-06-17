@@ -19,6 +19,7 @@
             <option value="$PROJECT_DIR$/lib/api-marvel" />
             <option value="$PROJECT_DIR$/lib/api-randomuser" />
             <option value="$PROJECT_DIR$/lib/common-api" />
+            <option value="$PROJECT_DIR$/lib/common-test" />
             <option value="$PROJECT_DIR$/lib/image-loader" />
             <option value="$PROJECT_DIR$/lib/logger" />
             <option value="$PROJECT_DIR$/lib/tracker" />

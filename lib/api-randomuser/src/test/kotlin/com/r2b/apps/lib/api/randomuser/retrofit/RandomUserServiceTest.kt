@@ -1,10 +1,11 @@
 package com.r2b.apps.lib.api.randomuser.retrofit
 
+import com.r2b.apps.lib.api.NetworkResponse
 import com.r2b.apps.lib.api.getOrDefaultOrNull
-import com.r2b.apps.lib.api.randomuser.MockWebServerTestWatcher
 import com.r2b.apps.lib.api.randomuser.entity.Results
-import com.r2b.apps.lib.api.randomuser.loadJson
-import com.r2b.apps.lib.api.randomuser.retrofitBuilder
+import com.r2b.apps.test.MockWebServerTestWatcher
+import com.r2b.apps.test.loadJson
+import com.r2b.apps.test.retrofitBuilder
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
@@ -74,6 +75,23 @@ class RandomUserServiceTest {
         assertEquals(20, response?.results?.size ?: 0)
         assertEquals(response?.info?.results, response?.results?.size)
         assert(response?.results?.all { it is Results } ?: false)
+    }
+
+    @Test
+    fun `When server error ApiError is retrieved`() = runBlocking {
+        val expectedCode = 500
+        val expectedMessage = "Uh oh, something has gone wrong. Please tweet us @randomapi about the issue. Thank you."
+        val body: String = loadJson(this::class.java.classLoader,"random-user_error.json")
+        getMockWebServer().enqueue(
+            MockResponse()
+                .setResponseCode(HttpURLConnection.HTTP_INTERNAL_ERROR)
+                .setBody(body)
+        )
+        val response = apiService.users()
+
+        assert(response.isApiError())
+        assertEquals(expectedMessage, (response as NetworkResponse.ApiError).body.error)
+        assertEquals(expectedCode, (response as NetworkResponse.ApiError).code)
     }
 
     private fun getMockWebServer() = mockWebServerRule.mockWebServer
