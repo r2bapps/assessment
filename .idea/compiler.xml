@@ -6,6 +6,7 @@
       <module name="x-user.data" target="11" />
       <module name="x-user.data-marvel" target="11" />
       <module name="x-user.data-randomuser" target="11" />
+      <module name="x-user.domain" target="11" />
       <module name="x-user.lib.image-loader" target="11" />
       <module name="x-user.lib.logger" target="11" />
       <module name="x-user.lib.storage" target="11" />

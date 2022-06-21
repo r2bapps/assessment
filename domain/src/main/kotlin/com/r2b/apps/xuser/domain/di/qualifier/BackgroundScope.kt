@@ -1,4 +1,4 @@
-package com.r2b.apps.xuser.di.qualifier
+package com.r2b.apps.xuser.domain.di.qualifier
 
 import javax.inject.Qualifier
 

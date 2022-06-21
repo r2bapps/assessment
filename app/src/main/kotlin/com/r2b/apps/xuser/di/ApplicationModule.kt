@@ -1,9 +1,8 @@
 package com.r2b.apps.xuser.di
 
-import com.r2b.apps.xuser.di.qualifier.BackgroundScope
-import com.r2b.apps.xuser.di.qualifier.MainScope
 import com.r2b.apps.xuser.di.qualifier.Pagination
 import com.r2b.apps.xuser.di.qualifier.WSRetry
+import com.r2b.apps.xuser.domain.di.qualifier.BackgroundScope
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,11 +19,6 @@ class ApplicationModule {
     // TODO: Extract to config file
     private val pageItems: Int = 20
     private val wsRetry: Boolean = true
-
-    @MainScope
-    @Singleton
-    @Provides
-    fun provideMainDispatcher(): CoroutineDispatcher = Dispatchers.Main
 
     @BackgroundScope
     @Singleton
