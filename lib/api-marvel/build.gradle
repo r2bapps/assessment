@@ -10,15 +10,16 @@ java {
 }
 
 dependencies {
-    api project(':lib:common-api')
+    implementation project(':lib:common-api')
     testImplementation project(':lib:common-test')
 
-    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
-    implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofit_version"
+    compileOnly "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp_version"
-    api "com.squareup.moshi:moshi:$rootProject.moshi_version"
+    compileOnly "com.squareup.moshi:moshi:$rootProject.moshi_version"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.moshi_version"
+
+    testImplementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
+    testImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.mockwebserver_version"
     testImplementation "junit:junit:$rootProject.junit_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines_version"
-    testImplementation "com.squareup.okhttp3:mockwebserver:$rootProject.mockwebserver_version"
 }

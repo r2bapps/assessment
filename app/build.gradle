@@ -53,27 +53,33 @@ android {
 
 dependencies {
 
+    implementation project(':domain')
     implementation project(':data')
     implementation project(':data-marvel')
     implementation project(':data-randomuser')
-    implementation project(':domain')
+    implementation project(':lib:api-marvel')
+    implementation project(':lib:api-randomuser')
+    implementation project(':lib:common-api')
     implementation project(':lib:logger')
     implementation project(':lib:tracker')
     implementation project(':lib:image-loader')
+    implementation project(":lib:utils")
     testImplementation project(':lib:common-test')
 
     // TODO: Extract grouped dependencies
 
     // HILT
-    kapt "androidx.hilt:hilt-compiler:$rootProject.hilt_jetpack_version"
     implementation "com.google.dagger:hilt-android:$rootProject.hilt_version"
+    kapt "androidx.hilt:hilt-compiler:$rootProject.hilt_jetpack_version"
     kapt "com.google.dagger:hilt-compiler:$rootProject.hilt_version"
-
     // NAVIGATION
     implementation "androidx.navigation:navigation-fragment-ktx:$rootProject.navigation_jetpack_version"
     implementation "androidx.navigation:navigation-ui-ktx:$rootProject.navigation_jetpack_version"
     implementation "androidx.navigation:navigation-dynamic-features-fragment:$rootProject.navigation_jetpack_version"
-
+    // ROOM
+    implementation "androidx.room:room-runtime:$rootProject.room_version"
+    implementation "androidx.room:room-ktx:$rootProject.room_version"
+    kapt "androidx.room:room-compiler:$rootProject.room_version"
     // RETROFIT + MOSHI + OKHTTP
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit_version"
     implementation "com.squareup.retrofit2:converter-moshi:$rootProject.retrofit_version"
@@ -81,28 +87,25 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$rootProject.okhttp_version"
     implementation "com.squareup.moshi:moshi:$rootProject.moshi_version"
     kapt "com.squareup.moshi:moshi-kotlin-codegen:$rootProject.moshi_version"
-
     // ADAPTER DELEGATE
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$rootProject.hannesdorfmann_version"
     implementation "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$rootProject.hannesdorfmann_version"
-
     // ANDROID
     implementation "androidx.core:core-ktx:$rootProject.core_ktx_version"
     implementation "androidx.appcompat:appcompat:$rootProject.appcompat_version"
     implementation "com.google.android.material:material:$rootProject.material_version"
     implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraintlayout_version"
 
-    testImplementation "androidx.arch.core:core-common:2.1.0"
-    testImplementation "androidx.arch.core:core-runtime:2.1.0"
-    testImplementation "androidx.arch.core:core-testing:2.1.0"
-    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.1"
-
-    // TESTING
+    testImplementation "androidx.arch.core:core-common:$rootProject.android_arch_version"
+    testImplementation "androidx.arch.core:core-runtime:$rootProject.android_arch_version"
+    testImplementation "androidx.arch.core:core-testing:$rootProject.android_arch_version"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines_test_version"
     testImplementation "junit:junit:$rootProject.junit_version"
     testImplementation "io.mockk:mockk:$rootProject.mockk_version"
     testImplementation "io.mockk:mockk-agent-jvm:$rootProject.mockk_version"
     testImplementation "app.cash.turbine:turbine:$rootProject.turbine_version"
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$rootProject.coroutines_version"
+
     androidTestImplementation "androidx.test.ext:junit:$rootProject.junit_ext_version"
     androidTestImplementation "androidx.test.espresso:espresso-core:$rootProject.expresso_version"
     androidTestImplementation "androidx.navigation:navigation-testing:$rootProject.navigation_jetpack_version"
