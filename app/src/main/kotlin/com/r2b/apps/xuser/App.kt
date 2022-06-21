@@ -10,8 +10,10 @@ import javax.inject.Inject
 class App : Application() {
 
     @Inject lateinit var logger: Logger
+    @Inject lateinit var strictModeDelegate: StrictModeDelegate
 
     override fun onCreate() {
+        strictModeDelegate.init(BuildConfig.DEBUG)
         super.onCreate()
         logger.init(BuildConfig.DEBUG)
     }
